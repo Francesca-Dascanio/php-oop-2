@@ -3,6 +3,14 @@ require_once __DIR__.'/classes/category.php';
 require_once __DIR__.'/classes/product.php';
 
 
+// Istanze dalla classe Categoria
+$dog = new Category('Dog');
+$cat = new Category('Cat');
+$bird = new Category('Bird');
+$fish = new Category('Fish');
+$reptile = new Category('Reptiles');
+
+
 // Istanze dalla classe prodotti
 $bed = new Product('Comfy Dog Bed', 1, 36.10, 'https://www.refinery29.com/images/10629943.jpg?crop=40%3A21', 'Beds', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pellentesque varius tellus, ac consectetur orci.', 'Dog');
 
