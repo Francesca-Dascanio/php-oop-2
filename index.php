@@ -103,7 +103,7 @@ require_once __DIR__.'/classes/toy.php';
                                             }
                                             catch(Exception $e) {
                                                 $isOk = false;
-                                                echo '<h1>Your date is already in the past! Change your date</h1>';
+                                                echo '<div>ERROR: Your date is already in the past! Change your date</div>';
                                             }
                                         ?>
                                         <div class="my-2 <?= $isOk ? '' : 'red'; ?>">

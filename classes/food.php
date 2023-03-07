@@ -19,6 +19,8 @@ class Food extends Product {
         $this->expiringDate = strtotime($this->expiringDate);
         
         if($actualDate > $this->expiringDate){
+
+            $this->expiringDate = date("d-m-Y", $this->expiringDate);
             throw new Exception('Not valid date');
         }
 
