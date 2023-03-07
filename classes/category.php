@@ -1,7 +1,12 @@
 <?php
 
+// Importa trait_name.php
+require_once __DIR__.'/../traits/trait_name.php';
+
 class Category {
-    public $name;
+
+    use Name;
+    // public $name;
 
     function __construct(string $name) {
         $this->name = $name;

@@ -2,6 +2,7 @@
 require_once __DIR__.'/classes/category.php';
 require_once __DIR__.'/classes/product.php';
 require_once __DIR__.'/db.php';
+require_once __DIR__.'/traits/trait_name.php';
 ?>
 
 
@@ -44,10 +45,15 @@ require_once __DIR__.'/db.php';
                                 </h3>
                                 <ul class="d-flex justify-content-between ul-style">
                                     <?php
-                                        $dog->printCategory();
-                                        $cat->printCategory();
-                                        $bird->printCategory();
-                                        $fish->printCategory();
+                                        foreach ($categories as $category) {
+                                    ?>
+                                    <li class="list-style">
+                                        <?php
+                                            echo $category->getName();
+                                        ?>
+                                    </li>
+                                    <?php
+                                        }
                                     ?>
                                 </ul>
                             </div>
@@ -76,13 +82,13 @@ require_once __DIR__.'/db.php';
                                     <div class="card-body">
                                         <h5 class="card-title">
                                             <?php
-                                                echo $product->name;
+                                                echo $product->getName();
                                             ?>
                                         </h5>
                                         <div class="my-bg">
                                             Category: 
                                             <?php
-                                                echo $product->category->name;
+                                                echo $product->category->getName();
                                             ?>
                                         </div>
                                         <p class="card-text">

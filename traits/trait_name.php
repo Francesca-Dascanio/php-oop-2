@@ -1,11 +1,17 @@
 <?php
 
 trait Name {
-    public $name;
+    protected $name;
 
-    public function getName($name) {
-        return $name;
+    public function setName($name) {
+        $this->name = $name;
     }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    
 }
 
 ?>

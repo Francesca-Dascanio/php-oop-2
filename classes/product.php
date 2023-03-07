@@ -1,10 +1,12 @@
 <?php
 
 require_once __DIR__.'/category.php';
-require_once __DIR__.'/php-oop-2/traits/trait_name.php';
+// Importa file trait_name.php
+require_once __DIR__.'/../traits/trait_name.php';
 
 class Product {
 
+    // Utilizzo di trait per il nome
     use Name;
     // public $name;
     public $id;

@@ -27,4 +27,12 @@ $products[] = $dryFood;
 $products[] = $catToy;
 $products[] = $dogToy;
 
+// Array categorie
+$categories = [];
+$categories[] = $dog;
+$categories[] = $cat;
+$categories[] = $bird;
+$categories[] = $fish;
+$categories[] = $reptile;
+
 ?>
