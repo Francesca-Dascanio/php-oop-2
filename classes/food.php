@@ -9,17 +9,20 @@ class Food extends Product {
         parent::__construct($name,$id, $price, $image, $type, $description, $category);
         $this->expiringDate = $expiringDate;
 
+        
+    }
+
+    public function checkExpiringDate() {
+
         $actualDate = date('Y-m-d',time());//date variable;
         $actualDate = strtotime($actualDate);
-        $this->expiringDate = strtotime($expiringDate);
+        $this->expiringDate = strtotime($this->expiringDate);
         
-        if($actualDate < $this->expiringDate){
-            $this->expiringDate = $expiringDate;
-        }
-        else{
+        if($actualDate > $this->expiringDate){
             throw new Exception('Not valid date');
         }
-            }
+
+    }
 }
 
 

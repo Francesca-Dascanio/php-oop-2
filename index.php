@@ -96,17 +96,20 @@ require_once __DIR__.'/classes/toy.php';
                                         <?php
                                         if (is_a($product, 'Food')) {
                                         ?>
-                                        <div class="my-2">
+                                        <?php
+                                            try {
+                                                $product->checkExpiringDate();
+                                                $isOk = true;
+                                            }
+                                            catch(Exception $e) {
+                                                $isOk = false;
+                                                echo '<h1>Your date is already in the past! Change your date</h1>';
+                                            }
+                                        ?>
+                                        <div class="my-2 <?= $isOk ? '' : 'red'; ?>">
                                             Expiring date: 
                                             <?php
                                                 echo $product->expiringDate;
-
-                                                try {
-                                                    $product->expiringDate;
-                                                }
-                                                catch(Exception $e) {
-                                                    echo '<h1>Your date is already in the past! Change your date</h1>';
-                                                }
                                             ?>      
                                         </div>
                                         <?php
