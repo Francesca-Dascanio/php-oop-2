@@ -150,7 +150,7 @@ require_once __DIR__.'/classes/toy.php';
                                         <h5 class="card-title">
                                             $ 
                                             <?php
-                                                echo $product->price;
+                                                echo number_format($product->price, 2);
                                             ?>
                                         </h5>
                                     </div>
