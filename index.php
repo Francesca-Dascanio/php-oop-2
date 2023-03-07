@@ -3,6 +3,8 @@ require_once __DIR__.'/classes/category.php';
 require_once __DIR__.'/classes/product.php';
 require_once __DIR__.'/db.php';
 require_once __DIR__.'/traits/trait_name.php';
+require_once __DIR__.'/classes/food.php';
+require_once __DIR__.'/classes/toy.php';
 ?>
 
 
@@ -91,6 +93,44 @@ require_once __DIR__.'/traits/trait_name.php';
                                                 echo $product->category->getName();
                                             ?>
                                         </div>
+                                        <?php
+                                        if (is_a($product, 'Food')) {
+                                        ?>
+                                        <div class="my-2">
+                                            Expiring date: 
+                                            <?php
+                                                echo $product->expiringDate;
+
+                                                try {
+                                                    $product->expiringDate;
+                                                }
+                                                catch(Exception $e) {
+                                                    echo '<h1>Your date is already in the past! Change your date</h1>';
+                                                }
+                                            ?>      
+                                        </div>
+                                        <?php
+                                            }
+                                        ?>
+                                        <?php
+                                        if (is_a($product, 'Toy')) {
+                                        ?>
+                                        <div class="my-2">
+                                            Material: 
+                                            <?php
+                                                echo $product->material;
+
+                                                try {
+                                                    $product->material;
+                                                }
+                                                catch(Exception $e) {
+                                                    echo '<h1>ERROR</h1>';
+                                                }
+                                            ?>      
+                                        </div>
+                                        <?php
+                                            }
+                                        ?>
                                         <p class="card-text">
                                             <?php
                                                 echo $product->description;

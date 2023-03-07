@@ -8,8 +8,16 @@ class Toy extends Product {
     {
         parent::__construct($name,$id, $price, $image, $type, $description, $category);
         $this->material = $material;
+
+        if(strlen($this->material) > 3){
+            $this->material = $material;
+        }
+        else{
+            throw new Exception('ERROR: Not valid material');
+        }
     }
 }
+
 
 
 ?>
