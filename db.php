@@ -22,7 +22,7 @@ $dryFood = new Food ('Dry Food for fatties', 2, 12.99, 'https://assets.petco.com
 
 $catToy = new Toy ('Wild Mouse with LED Eyes', 3, 6.59, 'https://m.media-amazon.com/images/I/51-EG8QtZLL.jpg', 'Toys', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pellentesque varius tellus, ac consectetur orci.', $cat, 'plastic');
 
-$dogToy = new Toy ('Chuckit! Ultra Ball', 4, 8.75, 'https://cdn.shopify.com/s/files/1/2492/9050/products/5ce344d681b8e1.04569549_2048x.jpg?v=1579779499', 'Toys', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pellentesque varius tellus, ac consectetur orci.', $dog, 'plastic');
+$dogToy = new Toy ('Chuckit! Ultra Ball', 4, 8.75, 'https://cdn.shopify.com/s/files/1/2492/9050/products/5ce344d681b8e1.04569549_2048x.jpg?v=1579779499', 'Toys', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pellentesque varius tellus, ac consectetur orci.', $dog, 'pl');
 
 // Array prodotti
 $products = [];

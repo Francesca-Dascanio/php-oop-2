@@ -118,6 +118,14 @@ require_once __DIR__.'/classes/toy.php';
                                         <?php
                                         if (is_a($product, 'Toy')) {
                                         ?>
+                                        <?php
+                                            try {
+                                                $product->checkMaterial();
+                                            }
+                                            catch(Exception $e) {
+                                                echo '<div>ERROR: String too short!</div>';
+                                            }
+                                        ?>
                                         <div class="my-2">
                                             Material: 
                                             <?php
