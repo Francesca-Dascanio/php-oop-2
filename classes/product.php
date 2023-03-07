@@ -1,23 +1,33 @@
 <?php
 
 require_once __DIR__.'/category.php';
+require_once __DIR__.'/php-oop-2/traits/trait_name.php';
 
-class Product extends Category {
-    public $title;
+class Product {
+
+    use Name;
+    // public $name;
     public $id;
     public $price;
     public $image;
     public $type;
     public $description;
+    // Composizione con classe Category
+    public $category;
 
-    function __construct(string $title, int $id, float $price, string $image, string $type, string $description, string $nameCategory) {
-        $this->title = $title;
+    function __construct(string $name, int $id, float $price, string $image, string $type, string $description, Category $category) {
+        $this->name = $name;
         $this->id = $id;
         $this->price = $price;
         $this->image = $image;
         $this->type = $type;
         $this->description = $description;
-        $this->nameCategory = $nameCategory;
+        $this->category = $category;
+        
+    }
+
+    public function getNameCategory() {
+        return $this->category->name;
     }
 
     public function printProduct() {
@@ -29,12 +39,12 @@ class Product extends Category {
 
         // Titolo
         echo '<div class="card-body"><h5 class="card-title">';
-        echo $this->title;
+        echo $this->name;
         echo '</h5>';
 
         // Categoria
         echo '<div>';
-        echo $this->nameCategory;
+        echo $this->getNameCategory();
         echo '</div>';
 
         // Tipo

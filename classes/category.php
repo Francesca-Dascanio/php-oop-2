@@ -1,15 +1,15 @@
 <?php
 
 class Category {
-    public $nameCategory;
+    public $name;
 
-    function __construct(string $nameCategory) {
-        $this->nameCategory = $nameCategory;
+    function __construct(string $name) {
+        $this->name = $name;
     }
 
     public function printCategory() {
         echo '<li class="list-style">';
-        echo $this->nameCategory;
+        echo $this->name;
         echo '</li>';
     }
 }

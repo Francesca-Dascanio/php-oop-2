@@ -1,6 +1,6 @@
 <?php 
 require_once __DIR__.'/classes/category.php';
-require_once __DIR__.'/classes/category.php';
+require_once __DIR__.'/classes/product.php';
 require_once __DIR__.'/db.php';
 ?>
 
@@ -65,45 +65,86 @@ require_once __DIR__.'/db.php';
                                 All products
                             </h3>
                             <div class="d-flex justify-content-between">
-                                    <!-- Card 1 -->
+                            <!-- SOLUZIONE DI OGGI CON CICLO -->
+                                <?php
+                                    foreach($products as $product) {
+                                ?>
                                 <div class="card" style="width: 18rem;">
+                                    <div style="width: 100%; height: 40%;">
+                                        <img class="card-img-top" style="height: 100%; object-fit: cover;" src="<?php echo $product->image;?>" alt="Card image cap">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <?php
+                                                echo $product->name;
+                                            ?>
+                                        </h5>
+                                        <div class="my-bg">
+                                            Category: 
+                                            <?php
+                                                echo $product->category->name;
+                                            ?>
+                                        </div>
+                                        <p class="card-text">
+                                            <?php
+                                                echo $product->description;
+                                            ?>
+                                        </p>
+                                        <h5 class="card-title">
+                                            $ 
+                                            <?php
+                                                echo $product->price;
+                                            ?>
+                                        </h5>
+                                    </div>
+                                    <a href="#" class="btn btn-primary m-3">
+                                            Buy now
+                                        </a>
+                                </div>
+                                <?php
+                                    }
+                                ?>
+
+                            <!-- SOLUZIONE DI IERI CON FUNZIONE PRINT -->
+                                    <!-- Card 1 -->
+                                <!-- <div class="card" style="width: 18rem;">
                                     <?php
                                         $bed->printProduct();
                                     ?>
                                     <a href="#" class="btn btn-primary m-3">
                                         Buy now
                                     </a>
-                                </div>
+                                </div> -->
 
                                 <!-- Card 2 -->
-                                <div class="card" style="width: 18rem;">
+                                <!-- <div class="card" style="width: 18rem;">
                                     <?php
                                         $dryFood->printProduct();
                                     ?>
                                     <a href="#" class="btn btn-primary m-3">
                                         Buy now
                                     </a>
-                                </div>
+                                </div> -->
 
                                 <!-- Card 3 -->
-                                <div class="card" style="width: 18rem;">
+                                <!-- <div class="card" style="width: 18rem;">
                                     <?php
                                         $catToy->printProduct();
                                     ?>
                                     <a href="#" class="btn btn-primary m-3">
                                         Buy now
                                     </a>
-                                </div>
+                                </div> -->
 
                                 <!-- Card 4 -->
-                                <div class="card" style="width: 18rem;">
+                                <!-- <div class="card" style="width: 18rem;">
                                     <?php
                                         $dogToy->printProduct();
                                     ?>
                                     <a href="#" class="btn btn-primary m-3">
                                         Buy now
                                     </a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>   
                     </div>
